@@ -3,6 +3,8 @@ require 'acts_as_votable/helpers/words'
 module ActsAsVotable
   class Vote < ::ActiveRecord::Base
 
+    self.table_name = "acts_as_votable_votes"
+
     include Helpers::Words
 
     if defined?(ProtectedAttributes) || ::ActiveRecord::VERSION::MAJOR < 4
